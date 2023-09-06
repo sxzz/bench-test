@@ -1,0 +1,26 @@
+diff --git a/dist/index.cjs.js b/dist/index.cjs.js
+index d4abc0c5c1d0c5cb44e2630ddf95fa84f5cfcd0b..f9886c6f1f7f971399a379a5bcc8dbaa3bd52dc8 100644
+--- a/dist/index.cjs.js
++++ b/dist/index.cjs.js
+@@ -21,6 +21,7 @@ const getV8Flags = (nodeVersionMajor) => {
+   return flags;
+ };
+ const tryIntrospect = () => {
++  console.trace(process.env);
+   if (process.env.__CODSPEED_NODE_CORE_INTROSPECTION_PATH__ !== void 0) {
+     const nodeVersionMajor = parseInt(process.version.slice(1).split(".")[0]);
+     const introspectionMetadata = {
+@@ -30,7 +31,7 @@ const tryIntrospect = () => {
+       process.env.__CODSPEED_NODE_CORE_INTROSPECTION_PATH__,
+       JSON.stringify(introspectionMetadata)
+     );
+-    process.exit(0);
++    // process.exit(0);
+   }
+ };
+ 
+@@ -133,4 +134,3 @@ exports.optimizeFunction = optimizeFunction;
+ exports.optimizeFunctionSync = optimizeFunctionSync;
+ exports.setupCore = setupCore;
+ exports.teardownCore = teardownCore;
+-//# sourceMappingURL=index.cjs.js.map

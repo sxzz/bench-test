@@ -13,7 +13,8 @@
   },
   "pnpm": {
     "patchedDependencies": {
-      "vitest@0.34.3": "patches/vitest@0.34.3.patch"
+      "vitest@0.34.3": "patches/vitest@0.34.3.patch",
+      "@codspeed/core@2.2.0": "patches/@codspeed__core@2.2.0.patch"
     }
   }
 }

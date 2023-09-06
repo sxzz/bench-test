@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 patchedDependencies:
+  '@codspeed/core@2.2.0':
+    hash: a7dqt3h7cmcuih5ibd4p3gnvca
+    path: patches/@codspeed__core@2.2.0.patch
   vitest@0.34.3:
     hash: xo6refgx7j624tut7iphlzq2xy
     path: patches/vitest@0.34.3.patch
@@ -22,18 +25,19 @@ devDependencies:
 
 packages:
 
-  /@codspeed/core@2.2.0:
+  /@codspeed/core@2.2.0(patch_hash=a7dqt3h7cmcuih5ibd4p3gnvca):
     resolution: {integrity: sha512-GSbTPA5Vt7rsrTenP/08zC55Ob2ag8AmqH9BfnoJqDv5RyHDv6tIHkJMLPuqatcKGFbuxbpE/FSYFE2xKkvqRQ==}
     dependencies:
       node-gyp-build: 4.6.1
     dev: true
+    patched: true
 
   /@codspeed/tinybench-plugin@2.2.0(tinybench@2.5.0):
     resolution: {integrity: sha512-yxOFhsJoICWqQ0e6I+S4CitA9gBDARHNYko04jyw9wnaCdFLc0uamVJI7p+BMmqa+1q3uvET3yUBHf6sEe/B1Q==}
     peerDependencies:
       tinybench: ^2.3.0
     dependencies:
-      '@codspeed/core': 2.2.0
+      '@codspeed/core': 2.2.0(patch_hash=a7dqt3h7cmcuih5ibd4p3gnvca)
       find-up: 6.3.0
       stack-trace: 1.0.0-pre2
       tinybench: 2.5.0
