@@ -1,0 +1,21 @@
+diff --git a/dist/runners.js b/dist/runners.js
+index 4a5b9e2acc9d46632018c6933c2b2bcd7b15dc5a..cc5857ce6c4299a7c2511fe78b48ba70d82611d6 100644
+--- a/dist/runners.js
++++ b/dist/runners.js
+@@ -18,6 +18,7 @@ import './vendor-date.6e993429.js';
+ import '@vitest/spy';
+ import 'pathe';
+ import 'std-env';
++import { withCodSpeed } from '@codspeed/tinybench-plugin';
+ 
+ class VitestTestRunner {
+   constructor(config) {
+@@ -168,7 +169,7 @@ async function runBenchmarkSuite(suite, runner) {
+     updateTask$1(suite);
+     benchmarkGroup.forEach((benchmark, idx) => {
+       const options = getBenchOptions(benchmark);
+-      const benchmarkInstance = new Bench(options);
++      const benchmarkInstance = withCodSpeed(new Bench(options));
+       const benchmarkFn = getBenchFn(benchmark);
+       benchmark.result = {
+         state: "run",

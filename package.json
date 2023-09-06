@@ -3,11 +3,17 @@
   "version": "1.0.0",
   "type": "module",
   "packageManager": "pnpm@8.7.4",
-  "scripts": {},
-  "license": "ISC",
+  "scripts": {
+    "bench": "vitest bench"
+  },
   "devDependencies": {
     "@codspeed/tinybench-plugin": "^2.2.0",
     "tinybench": "^2.5.0",
     "vitest": "^0.34.3"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "vitest@0.34.3": "patches/vitest@0.34.3.patch"
+    }
   }
 }

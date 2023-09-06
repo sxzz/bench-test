@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  vitest@0.34.3:
+    hash: xo6refgx7j624tut7iphlzq2xy
+    path: patches/vitest@0.34.3.patch
+
 devDependencies:
   '@codspeed/tinybench-plugin':
     specifier: ^2.2.0
@@ -13,7 +18,7 @@ devDependencies:
     version: 2.5.0
   vitest:
     specifier: ^0.34.3
-    version: 0.34.3
+    version: 0.34.3(patch_hash=xo6refgx7j624tut7iphlzq2xy)
 
 packages:
 
@@ -646,7 +651,7 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitest@0.34.3:
+  /vitest@0.34.3(patch_hash=xo6refgx7j624tut7iphlzq2xy):
     resolution: {integrity: sha512-7+VA5Iw4S3USYk+qwPxHl8plCMhA5rtfwMjgoQXMT7rO5ldWcdsdo3U1QD289JgglGK4WeOzgoLTsGFu6VISyQ==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -710,6 +715,7 @@ packages:
       - supports-color
       - terser
     dev: true
+    patched: true
 
   /why-is-node-running@2.2.2:
     resolution: {integrity: sha512-6tSwToZxTOcotxHeA+qGCq1mVzKR3CwcJGmVcY+QE8SHy6TnpFnh8PAvPNHYr7EcuVeG0QSMxtYCuO1ta/G/oA==}
